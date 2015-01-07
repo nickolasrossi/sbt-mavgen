@@ -1,2 +1,5 @@
 # sbt-mavgen
-Code generator for MAVLink messages to Scala case classes
+
+sbt plugin that generates Scala case classes from MAVLink message definitions.
+
+Companion to the Scavlink library.
