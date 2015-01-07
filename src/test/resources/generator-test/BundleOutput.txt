@@ -1,0 +1,3 @@
+package: MAVLink.test
+
+bundle: common

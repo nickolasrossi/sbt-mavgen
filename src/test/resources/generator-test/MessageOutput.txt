@@ -1,0 +1,75 @@
+package: MAVLink.test
+
+id: 22
+name: PARAM_VALUE
+className: ParamValue
+description: Emit the value of a onboard parameter. The inclusion of param_count and param_index in the message allows the recipient to keep track of received parameters and allows him to re-request missing parameters after a loss or timeout.
+bundle: common
+magic: 220
+
+fields:
+
+name: paramId
+plainName: paramId
+ord: a
+marshalField: char_(16)
+marshalMethodCall: _char_(16)(a)
+unmarshalMethodCall: char_(16)
+description: Onboard parameter id, terminated by NULL if the length is less than 16 human-readable chars and WITHOUT null termination (NULL) byte if the length is exactly 16 chars - applications have to provide 16+1 bytes storage if the ID is stored as string
+ftype.dataType: char
+ftype.enum: 
+ftype.elem: 16
+stype.dataType: String
+stype.default: ""
+
+name: paramValue
+plainName: paramValue
+ord: b
+marshalField: float
+marshalMethodCall: _float(b)
+unmarshalMethodCall: float
+description: Onboard parameter value
+ftype.dataType: float
+ftype.enum: 
+ftype.elem: 1
+stype.dataType: Float
+stype.default: 0
+
+name: paramType
+plainName: paramType
+ord: c
+marshalField: uint8_t
+marshalMethodCall: _uint8_t(c.id)
+unmarshalMethodCall: MavParamType(uint8_t)
+description: Onboard parameter type: see the MAV_PARAM_TYPE enum for supported data types.
+ftype.dataType: uint8_t
+ftype.enum: MAV_PARAM_TYPE
+ftype.elem: 1
+stype.dataType: MavParamType.Value
+stype.default: MavParamType(0)
+
+name: paramCount
+plainName: paramCount
+ord: d
+marshalField: uint16_t
+marshalMethodCall: _uint16_t(d)
+unmarshalMethodCall: uint16_t
+description: Total number of onboard parameters
+ftype.dataType: uint16_t
+ftype.enum: 
+ftype.elem: 1
+stype.dataType: Short
+stype.default: 0
+
+name: paramIndex
+plainName: paramIndex
+ord: e
+marshalField: uint16_t
+marshalMethodCall: _uint16_t(e)
+unmarshalMethodCall: uint16_t
+description: Index of this onboard parameter
+ftype.dataType: uint16_t
+ftype.enum: 
+ftype.elem: 1
+stype.dataType: Short
+stype.default: 0

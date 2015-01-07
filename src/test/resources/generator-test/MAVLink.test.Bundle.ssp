@@ -1,0 +1,7 @@
+<%@ val bundles: Seq[String] %>
+<%@ val pkg: String %>
+package: ${pkg}
+
+#for (b <- bundles)
+bundle: ${b}
+#end

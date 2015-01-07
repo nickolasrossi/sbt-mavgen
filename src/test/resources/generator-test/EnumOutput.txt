@@ -1,0 +1,21 @@
+package: MAVLink.test
+name: MavResult
+description: result from a mavlink command
+isFlag: false
+
+values:
+name: ACCEPTED
+value: 0
+description: Command ACCEPTED and EXECUTED
+name: TEMPORARILY_REJECTED
+value: 1
+description: Command TEMPORARY REJECTED/DENIED
+name: DENIED
+value: 2
+description: Command PERMANENTLY DENIED
+name: UNSUPPORTED
+value: 3
+description: Command UNKNOWN/UNSUPPORTED
+name: FAILED
+value: 4
+description: Command executed, but failed

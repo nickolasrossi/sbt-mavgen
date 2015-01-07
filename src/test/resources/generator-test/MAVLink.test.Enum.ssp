@@ -1,0 +1,14 @@
+<% import scavlink.sbt.mavgen._ %>
+<%@ val enum: Enum %>
+<%@ val pkg: String %>
+package: ${pkg}
+name: ${enum.name}
+description: ${enum.description}
+isFlag: ${enum.isFlag}
+
+values:
+#for (v <- enum.values)
+name: ${v.name}
+value: ${v.value}
+description: ${v.description}
+#end

@@ -1,0 +1,31 @@
+<% import scavlink.sbt.mavgen._ %>
+<%@ val messages: Seq[Message] %>
+<%@ val bundle: String %>
+<%@ val pkg: String %>
+package: ${pkg}
+
+#for (m <- messages)
+id: ${m.id}
+name: ${m.name}
+className: ${m.className}
+description: ${m.description}
+bundle: ${m.bundle}
+magic: ${m.magic}
+
+fields:
+#for (f <- m.fields)
+
+name: ${f.name}
+plainName: ${f.plainName}
+ord: ${f.ord}
+marshalField: ${f.marshalField}
+marshalMethodCall: ${f.marshalMethodCall}
+unmarshalMethodCall: ${f.unmarshalMethodCall}
+description: ${f.description}
+ftype.dataType: ${f.ftype.dataType}
+ftype.enum: ${f.ftype.enum}
+ftype.elem: ${f.ftype.elem}
+stype.dataType: ${f.stype.dataType}
+stype.default: ${f.stype.default}
+#end
+#end

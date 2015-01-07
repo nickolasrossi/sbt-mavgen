@@ -1,0 +1,43 @@
+package: MAVLink.test
+
+name: NavWaypoint
+id: 16
+bundle: common
+description: Navigate to MISSION.
+
+params:
+
+name: holdTime
+plainName: holdTime
+index: 1
+description: Hold time in decimal seconds. (ignored by fixed wing, time to stay at MISSION for rotary wing)
+ftype: Float
+default: 0
+
+name: acceptanceRadius
+plainName: acceptanceRadius
+index: 2
+description: Acceptance radius in meters (if the sphere with this radius is hit, the MISSION counts as reached)
+ftype: Float
+default: 0
+
+name: param3
+plainName: param3
+index: 3
+description: 0 to pass through the WP, if > 0 radius in meters to pass by WP. Positive value for clockwise orbit, negative value for counter-clockwise orbit. Allows trajectory control.
+ftype: Float
+default: 0
+
+name: desiredYawAngle
+plainName: desiredYawAngle
+index: 4
+description: Desired yaw angle at MISSION (rotary wing)
+ftype: Float
+default: 0
+
+name: location
+plainName: location
+index: 5
+description: Latitude / Longitude / Altitude
+ftype: Coordinates
+default: Geo()

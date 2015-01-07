@@ -1,0 +1,22 @@
+<% import scavlink.sbt.mavgen._ %>
+<%@ val cmds: Seq[Command] %>
+<%@ val pkg: String %>
+package: ${pkg}
+
+#for (cmd <- cmds)
+name: ${cmd.name}
+id: ${cmd.id}
+bundle: ${cmd.bundle}
+description: ${cmd.description}
+
+params:
+#for (p <- cmd.params)
+
+name: ${p.name}
+plainName: ${p.plainName}
+index: ${p.index}
+description: ${p.description}
+ftype: ${p.ftype}
+default: ${p.default}
+#end
+#end
